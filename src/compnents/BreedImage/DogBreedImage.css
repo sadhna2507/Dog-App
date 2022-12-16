@@ -11,3 +11,6 @@ img{
 .sub_heading{
     margin-top: 4rem;
 }
+.MuiImageListItem-img{
+    height: 20px;
+}

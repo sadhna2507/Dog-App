@@ -28,7 +28,7 @@ function DogBreedImage() {
 
   return (
     <div>
-      hiii
+      <h1>hii</h1>
       <Container maxWidth="100vw">
         <Box className="sub_heading">
           <Typography variant="h4">You selected {value} breed!</Typography>
@@ -38,11 +38,12 @@ function DogBreedImage() {
           {imageList.map((item) => (
             // console.log(item),
             <ImageListItem key={item.img}>
-              <img
+              <img className="dogImg"
                 src={`${item}`}
                 srcSet={`${item}`}
                 alt={item.title}
                 loading="lazy"
+                
               />
             </ImageListItem>
           ))}
