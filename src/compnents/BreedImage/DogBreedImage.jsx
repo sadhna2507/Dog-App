@@ -29,6 +29,7 @@ function DogBreedImage() {
   return (
     <div>
       <h1>hii</h1>
+      <h2>giii</h2>
       <Container maxWidth="100vw">
         <Box className="sub_heading">
           <Typography variant="h4">You selected {value} breed!</Typography>
