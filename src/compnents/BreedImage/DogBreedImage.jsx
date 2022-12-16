@@ -1,14 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+// import { Row, Col, Alert, Container, Card } from "react-bootstrap";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
+
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-
 import "./DogBreedImage.css";
 
+// import axios from 'axios';
 
 function DogBreedImage() {
   const [imageList, setImageList] = useState([]);
@@ -28,25 +31,24 @@ function DogBreedImage() {
 
   return (
     <div>
-      <h1>hii</h1>
-      <h2>giii</h2>
       <Container maxWidth="100vw">
         <Box className="sub_heading">
           <Typography variant="h4">You selected {value} breed!</Typography>
         </Box>
 
-        <ImageList sx={{ width: "100vw", height: "100vh" }} cols={3}>
+        <ImageList sx={{ width: "100%" }} cols={4} className="imgList">
           {imageList.map((item) => (
             // console.log(item),
-            <ImageListItem key={item.img}>
+            <div className="imgItem">
+              <ImageListItem key={item.img}>
               <img className="dogImg"
                 src={`${item}`}
                 srcSet={`${item}`}
                 alt={item.title}
                 loading="lazy"
-                
               />
             </ImageListItem>
+            </div>
           ))}
         </ImageList>
       </Container>

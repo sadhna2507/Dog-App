@@ -11,6 +11,8 @@ img{
 .sub_heading{
     margin-top: 4rem;
 }
-.MuiImageListItem-img{
-    height: 20px;
+
+.dogImg {
+    height:  300px!important; 
+    width: 350px !important;
 }

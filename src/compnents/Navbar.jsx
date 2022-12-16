@@ -6,7 +6,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 
 function Navbar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} position="sticky" top="0" zIndex="1" >
       <AppBar position="static" color="secondary">
         <Toolbar>
           <Typography variant='h5' component="div" sx={{ flexGrow: 1 }}>
