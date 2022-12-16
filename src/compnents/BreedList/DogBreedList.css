@@ -1,20 +1,19 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.sub_heading{
-    text-align: center;
-    margin-bottom: 3rem; 
-    margin-top: 2rem;
+.sub_heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
-.breed_name{
-    text-transform: uppercase;
-    cursor: pointer;
+.breed_name {
+  text-transform: uppercase;
+  cursor: pointer;
 }
-.breed_name:active{
-    background-color: rgb(145, 28, 145);
-    color: white;
-
+.breed_name:active {
+  background-color: rgb(145, 28, 145);
+  color: white;
 }

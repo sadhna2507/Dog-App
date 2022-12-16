@@ -8,21 +8,23 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import axios from "axios";
-import Container from '@mui/material/Container';
+import Container from "@mui/material/Container";
+import { Button } from "@mui/material";
 
-import "./DogBreedList.css"
+import "./DogBreedList.css";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: " rgb(237, 155, 237)",
   padding: theme.spacing(2),
   textAlign: "center",
   color: "black",
-  fontWeight:"bold",
-  border : "1px solid rgb(145, 28, 145)",
-  boxShadow: "5px 5px 5px #aaaaaa"
+  fontWeight: "bold",
+  border: "1px solid rgb(145, 28, 145)",
+  boxShadow: "5px 5px 5px #aaaaaa",
 }));
 
 function DogBreedList() {
+  
   const navigate = useNavigate();
 
   const [dogsList, setDogsList] = useState([]);
@@ -30,38 +32,53 @@ function DogBreedList() {
   useEffect(() => {
     axios.get("https://dog.ceo/api/breeds/list/all").then((response) => {
       setDogsList(response.data.message);
-      //   console.log(response.data.message)
     });
   }, []);
-  console.log(dogsList);
+
+  const handleLogOut=()=>{
+    localStorage.removeItem("UserRegisteredData")
+    alert("Logged out successfully")
+    navigate("/")
+  }
 
   return (
     <>
+      <Container maxWidth="100vw">
+        <Box textAlign="end">
+          <Button
+            variant="contained"
+            color="secondary"
+            sx={{ mt: 2, mr: 3 }}
+            onClick={handleLogOut}
+          >
+            Log Out
+          </Button>
+        </Box>
+        <Box className="sub_heading" position="sticky">
+          <Typography variant="h4">Select the Breed below!!</Typography>
+        </Box>
 
-      <Container  maxWidth="100vw">
-        <Box className="sub_heading" >
-      <Typography variant="h4" >Select the Breed below!!</Typography>
-      </Box>
-
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid
-          container
-          spacing={{ xs: 2, md: 6 }}
-          columns={{ xs: 4, sm: 8, md: 24 }}
-        >
-          {Object.keys(dogsList)?.map((value, index) => (
-            <Grid item xs={2} sm={4} md={4} key={index}>
-              <Item onClick={()=> navigate("/breedImage", { state: { value: value } }) } className="breed_name">{value}</Item>
-            </Grid>
-          ))}
-        </Grid>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 6 }}
+            columns={{ xs: 4, sm: 8, md: 24 }}
+          >
+            {Object.keys(dogsList)?.map((value, index) => (
+              <Grid item xs={2} sm={4} md={4} key={index}>
+                <Item
+                  onClick={() =>
+                    navigate("/breedImage", { state: { value: value } })
+                  }
+                  className="breed_name"
+                >
+                  {value}
+                </Item>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       </Container>
-
-      
-
-
-
     </>
   );
 }
