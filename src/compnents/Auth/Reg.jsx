@@ -28,7 +28,6 @@ function Reg() {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-  // console.log(user)
   const handleSubmit = (e) => {
     e.preventDefault();
     const { names, email, password } = user;

@@ -18,7 +18,7 @@ function DogBreedImage() {
 
   const { state } = useLocation();
   const { value } = state;
-  
+
   useEffect(() => {
     axios
       .get(`https://dog.ceo/api/breed/${value}/images/random`)
@@ -28,7 +28,6 @@ function DogBreedImage() {
   }, []);
 
   const handleLogOut = () => {
-    localStorage.removeItem("UserRegisteredData");
     alert("Logged out successfully");
     navigate("/");
   };

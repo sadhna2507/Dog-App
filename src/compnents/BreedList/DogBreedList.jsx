@@ -24,7 +24,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function DogBreedList() {
-  
   const navigate = useNavigate();
 
   const [dogsList, setDogsList] = useState([]);
@@ -35,11 +34,10 @@ function DogBreedList() {
     });
   }, []);
 
-  const handleLogOut=()=>{
-    localStorage.removeItem("UserRegisteredData")
-    alert("Logged out successfully")
-    navigate("/")
-  }
+  const handleLogOut = () => {
+    alert("Logged out successfully");
+    navigate("/");
+  };
 
   return (
     <>

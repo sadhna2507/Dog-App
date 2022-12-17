@@ -22,13 +22,11 @@ function UserLogin() {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-  console.log(user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const getUserArr = localStorage.getItem("UserRegisteredData");
-    console.log(getUserArr);
 
     const { email, password } = user;
 
