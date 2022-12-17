@@ -1,13 +1,15 @@
 import React from "react";
 
 import { TextField, Button, Box, Alert } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import UserLogin from "./UserLogin";
 import Typography from "@mui/material/Typography";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import {UserContext} from "../../Context/ContextData"
 
 function Reg() {
   const [user, setUser] = useState({
@@ -16,7 +18,7 @@ function Reg() {
     password: "",
   });
   const [data, setData] = useState([]);
-  const [login, setLogin] = useState(true);
+  const {login, setLogin} = useContext(UserContext);
   const [error, setError] = useState({
     status: false,
     msg: "",
