@@ -15,10 +15,6 @@ img {
   font-weight: bold;
   text-transform: uppercase;
 }
-.dogImg {
-  height: 400px !important;
-  width: 420px !important;
-}
 .imgcont {
   justify-content: center;
   display: flex;
